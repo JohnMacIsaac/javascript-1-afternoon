@@ -1,32 +1,30 @@
 //////////////////PROBLEM 1////////////////////
-
 //Create a function declaration called greeting that
 //accepts name as its only parameter.
 //greeting should return the string "Hello, "
 //plus the value of the name parameter.
-
-//Code here
+function greeting(name) {
+  return "Hello, " + name;
+}
+greeting('john');
 
 //////////////////PROBLEM 2////////////////////
-
 //Rewrite the function greeting as a function expression.
 //Name it newGreeting.
-
-//Code Here
+const newGreeting = function (name) {
+  return `Hello, ${name}`;
+}
 
 //////////////////PROBLEM 3////////////////////
-
 //Rewrite the function greeting as an arrow function.
 //Name it finalGreeting.
+let finalGreeting = name => `Hello, ${name}`; 
+greeting('john');
 
-//Code Here
 
 //////////////////PROBLEM 4////////////////////
-
 //Create an array called groceries with the values
 //"apples", "milk", "eggs", "bread"
-
-//Code Here
 
 //Write a function called doubleCheck that takes in an array
 //as a parameter.
@@ -35,6 +33,26 @@
 //doubleCheck should return the array.
 
 //Code Here
+const groceries = ["apples", "milk", "eggs", "bread"];
+
+let doubleCheck = function(array) {
+  // let newArr = array.slice();
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    newArr.push(array[i]);
+  }
+
+  for (let i = 0; i < newArr.length; i++) {
+    if(newArr[i] === "chocolate") {
+      return newArr;
+    } 
+  } 
+  // return newArr.push("chocolate"); // 5 
+  newArr.push("chocolate");
+  return newArr; // ["apples", "milk", "eggs", "bread", "chocolate"];  // Why
+  
+}
+doubleCheck(groceries);
 
 //////////////////PROBLEM 5////////////////////
 
@@ -44,20 +62,30 @@
 //and goodBoy (a boolean).
 
 //Code Here
+const dog = {
+  name: 'Anathema',
+  color: 'black',
+  age: 10,
+  goodBoy: true,
+}
 
 //...access the dog's name from the object and assign it to a
 //variable called devMountainClassPet.
 
 //Code Here
+const devMountainClassPet = dog.name;
 
 //Add a method to dog called bark.
 //The value of bark should be a function that returns the string "Woof woof".
 
 //Code Here
+dog.bark = function() { return "Woof woof"};
 
 //Store the result of invoking the bark method in a variable called ruff.
 
 //Code Here
+let ruff = dog.bark();
+
 
 //////////////////PROBLEM 6////////////////////
 
@@ -70,15 +98,22 @@
 
 //Return mySum.
 
-//Code Here
+// Code Here
+function looper(array) {
+  let mySum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] % 2 === 0 || array[i]);
+  }
+}
+
 
 //////////////////PROBLEM 7////////////////////
 
 //Given the following function called math
 
-function math(num1, num2, callback) {
-  return callback(num1, num2);
-}
+// function math(num1, num2, callback) {
+//   return callback(num1, num2);
+// }
 
 //Write a function called add that takes in two parameters and
 //returns the result of adding them together.
